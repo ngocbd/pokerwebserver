@@ -47,7 +47,7 @@ public class RegisterServlet extends HttpServlet {
     checkArgument(password.length()>5, "password must more than 5");
     
     User existUser = ofy().load().type(User.class).id(username).now();
-    System.out.println(existUser);
+    
     checkArgument( existUser==null , "User "+username+" exists ");
     
     User user  = new User();
